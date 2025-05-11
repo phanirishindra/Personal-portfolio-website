@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sathwik - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">MY PERSONAL PORTFOLIO</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="https://www.youtube.com/@sathwikelagandulavines">YouTube</a></li>
+                <li><a href="resume.pdf" class="btn">Resume</a></li>
+                <li><a href="https://www.instagram.com/privatee__se/">Social Media</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="text-content">
+                <h1>Hey, I'm <span class="highlight">Sathwik</span></h1>
+                <p>Editor | Python Instructor | Content Creator</p>
+                <a href="#contact" class="btn">Hire Me</a>
+            </div>
+            <div class="image-content">
+                <img src="images/profile.jpg" alt="Sathwik">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>I am an editor with a passion for continuous learning and self-improvement. With strong skills in Python, I teach online classes to help others grow in programming.</p>
+                <p>I run a YouTube channel, focusing on education and knowledge sharing. Since I have minimal interest in social media, I prioritize productivity and aim to achieve more, earn well, and contribute to helping the poor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Success Message -->
+        <p id="success-message" class="hidden">Message Sent Successfully! ✅</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Sathwik | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents form submission (since no backend)
+            
+            // Display success message
+            document.getElementById("success-message").classList.remove("hidden");
+
+            // Clear form fields
+            this.reset();
+
+            // Hide message after 3 seconds
+            setTimeout(() => {
+                document.getElementById("success-message").classList.add("hidden");
+            }, 3000);
+        });
+    </script>
+    async function fetchGitStatus() {
+  const res = await fetch('/api/git-status');
+  const data = await res.json();
+
+  document.getElementById('git-summary').innerHTML = `
+    ✅ Repo is ${data.isClean ? 'up to date' : 'not clean'}<br>
+    🔄 Total commits: <b>${data.totalCommits}</b><br>
+    🕒 Last commit: <b>${new Date(data.latestCommit).toLocaleDateString()}</b><br>
+    🌿 Branches: <b>${data.branches}</b>
+  `;
+}
+fetchGitStatus();
+<section id="git-status">
+  <h2>Project Git Integration</h2>
+  <p id="git-summary">Loading Git info...</p>
+</section>
+
+    
+    
+
+</body>
+</html>

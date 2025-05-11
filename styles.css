@@ -1,0 +1,162 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Soft Green Background */
+body {
+    background: linear-gradient(to right, #a8e6cf, #dcedc1); /* Soft Green Gradient */
+    color: #3d3d3d;
+    text-align: center;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.4);
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #3a3a3a;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #8bc34a;
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px;
+}
+
+.container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Stylish Text & Rounded Image */
+.text-content {
+    flex: 1;
+    text-align: left;
+}
+
+.text-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #2e7d32; /* Dark Green */
+}
+
+.image-content img {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 5px solid #388e3c;
+    box-shadow: 5px 5px 20px rgba(56, 142, 60, 0.5);
+}
+
+/* About Section */
+#about {
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 30px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    color: #3d3d3d;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #4caf50;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #3d3d3d;
+}
+
+button {
+    background: #4caf50;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+button:hover {
+    background: #388e3c;
+}
+
+/* Success Message Styling */
+#success-message {
+    margin-top: 15px;
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    color: #2e7d32;
+}
